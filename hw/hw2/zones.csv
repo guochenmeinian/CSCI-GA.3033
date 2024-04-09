@@ -1,0 +1,13 @@
+Zone,GPU available,GPU allocated to VM
+us-east1-b,no,no
+us-east1-c,no,no
+us-east1-d,yes,yes
+us-east4-c,no,no
+us-east4-b,no,no
+us-east4-a,no,no
+us-central1-c,yes,yes
+us-central1-a,yes,yes
+us-central1-f,yes,yes
+us-central1-b,yes,yes
+us-west1-b,yes,yes
+us-west1-c,no,no
