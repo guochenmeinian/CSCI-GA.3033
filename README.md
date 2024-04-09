@@ -8,6 +8,8 @@
 
 - `slides/`: Lecture slides that cover various topics in compiler design and construction, providing a comprehensive overview of the course content.
 - `homework/`: My homework solution.
+- `project_1/`: Implementation of training of popular model architectures (ResNet, AlexNet, and VGG) on the ImageNet dataset.
+- `project_2/`: TBD.
 
 ---
 
