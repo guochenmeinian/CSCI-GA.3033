@@ -1,0 +1,30 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+Vagrant.configure("2") do |config|
+    config.vm.box = "ubuntu/focal64"
+  
+    # Forward port 8888 for Jupyter notebooks (if needed) or any other app
+    config.vm.network "forwarded_port", guest: 8888, host: 8888, host_ip: "127.0.0.1"
+  
+    # Setting up a private network, which allows host-only access to the machine
+    config.vm.network "private_network", ip: "192.168.33.10"
+  
+    # Shared folder settings
+    config.vm.synced_folder ".", "/vagrant", disabled: false
+  
+    # VirtualBox specific configurations
+    config.vm.provider "virtualbox" do |vb|
+      vb.memory = "2048"   # Set RAM to 2048 MB
+      vb.cpus = 2          # Set CPUs to 2
+    end
+  
+    # Provisioning the VM to install necessary packages
+    config.vm.provision "shell", inline: <<-SHELL
+      sudo apt-get update
+      sudo apt-get install -y python3-pip
+      pip3 install torch torchvision numpy
+      # Install any other dependencies you might have
+    SHELL
+  end
+  
