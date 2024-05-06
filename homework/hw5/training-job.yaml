@@ -1,0 +1,15 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: hw5-training-job
+spec:
+  template:
+    spec:
+      containers:
+      - name: hw5-training
+        image: gcr.io/your-project-id/hw5-training:latest
+        resources:
+          limits:
+            nvidia.com/gpu: 1
+      restartPolicy: Never
+  backoffLimit: 4
